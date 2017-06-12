@@ -1,0 +1,17 @@
+
+
+
+forEach
+fun <T> Iterable<T>.forEach(action: (T) -> Unit)
+Performs the given action on each element.
+
+forEachIndexed
+fun <T> Iterable<T>.forEachIndexed(
+    action: (index: Int, T) -> Unit)
+Performs the given action on each element, providing sequential index with the element.
+
+
+
+onEach
+fun <T, C : Iterable<T>> C.onEach(action: (T) -> Unit): C
+Performs the given action on each element and returns the collection itself afterwards.

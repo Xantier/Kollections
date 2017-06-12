@@ -1,0 +1,95 @@
+
+all
+fun <T> Iterable<T>.all(predicate: (T) -> Boolean): Boolean
+Returns true if all elements match the given predicate.
+
+fun <K, V> Map<out K, V>.all(
+    predicate: (Entry<K, V>) -> Boolean
+): Boolean
+Returns true if all entries match the given predicate.
+
+
+any
+fun <T> Iterable<T>.any(): Boolean
+Returns true if collection has at least one element.
+
+fun <T> Iterable<T>.any(predicate: (T) -> Boolean): Boolean
+Returns true if at least one element matches the given predicate.
+
+fun <K, V> Map<out K, V>.any(): Boolean
+Returns true if map has at least one entry.
+
+fun <K, V> Map<out K, V>.any(
+    predicate: (Entry<K, V>) -> Boolean
+): Boolean
+Returns true if at least one entry matches the given predicate.
+
+
+contains
+operator fun <K, V> Map<out K, V>.contains(key: K): Boolean
+Checks if the map contains the given key. This method allows to use the x in map syntax for checking whether an object is contained in the map.
+
+operator fun <T> Iterable<T>.contains(element: T): Boolean
+Returns true if element is found in the collection.
+
+containsAll
+fun <T> Collection<T>.containsAll(
+    elements: Collection<T>
+): Boolean
+Checks if all elements in the specified collection are contained in this collection.
+
+containsKey
+fun <K> Map<out K, *>.containsKey(key: K): Boolean
+Returns true if the map contains the specified key.
+
+containsValue
+fun <K, V> Map<K, V>.containsValue(value: V): Boolean
+Returns true if the map maps one or more keys to the specified value.
+
+none
+fun <T> Iterable<T>.none(): Boolean
+Returns true if the collection has no elements.
+
+fun <T> Iterable<T>.none(predicate: (T) -> Boolean): Boolean
+Returns true if no elements match the given predicate.
+
+isEmpty
+fun <T> any_array<T>.isEmpty(): Boolean
+Returns true if the array is empty.
+isNotEmpty
+fun <K, V> Map<out K, V>.isNotEmpty(): Boolean
+Returns true if this map is not empty.
+
+fun <T> Collection<T>.isNotEmpty(): Boolean
+Returns true if the collection is not empty.
+
+
+
+# Array content checks
+
+contentDeepEquals
+1.1
+infix fun <T> Array<out T>.contentDeepEquals(
+    other: Array<out T>
+): Boolean
+Returns true if the two specified arrays are deeply equal to one another, i.e. contain the same number of the same elements in the same order.
+contentDeepHashCode
+1.1
+fun <T> Array<out T>.contentDeepHashCode(): Int
+Returns a hash code based on the contents of this array as if it is List. Nested arrays are treated as lists too.
+contentDeepToString
+1.1
+fun <T> Array<out T>.contentDeepToString(): String
+Returns a string representation of the contents of this array as if it is a List. Nested arrays are treated as lists too.
+contentEquals
+1.1
+infix fun <T> any_array<T>.contentEquals(
+    other: Array<out T>
+): Boolean
+Returns true if the two specified arrays are structurally equal to one another, i.e. contain the same number of the same elements in the same order.
+
+
+# Full collection checks
+orEmpty
+fun <T> Collection<T>?.orEmpty(): Collection<T>
+Returns this Collection if it's not null and the empty list otherwise.

@@ -1,0 +1,28 @@
+addAll
+fun <T> MutableCollection<in T>.addAll(
+    elements: Iterable<T>
+): Boolean
+Adds all elements of the given elements collection to this MutableCollection.
+
+putAll
+fun <K, V> MutableMap<in K, in V>.putAll(
+    pairs: Iterable<Pair<K, V>>)
+Puts all the elements of the given collection into this MutableMap with the first component in the pair being the key and the second the value.
+
+remove
+fun <K, V> MutableMap<out K, V>.remove(key: K): V?
+Removes the specified key and its corresponding value from this map.
+
+fun <T> MutableCollection<out T>.remove(element: T): Boolean
+Removes a single instance of the specified element from this collection, if it is present.
+
+fun <K, V> MutableMap<out K, out V>.remove(
+    key: K,
+    value: V
+): Boolean
+Removes the entry for the specified key only if it is currently mapped to the specified value.
+
+fun <T> MutableIterable<T>.removeAll(
+    predicate: (T) -> Boolean
+): Boolean
+Removes all elements from this MutableIterable that match the given predicate.

@@ -1,0 +1,202 @@
+
+
+
+asIterable
+fun <T> Iterable<T>.asIterable(): Iterable<T>
+Returns this collection as an Iterable.
+
+fun <K, V> Map<out K, V>.asIterable(): Iterable<Entry<K, V>>
+Creates an Iterable instance that wraps the original map returning its entries when being iterated.
+
+fun <T> any_array<T>.asIterable(): Iterable<T>
+Creates an Iterable instance that wraps the original array returning its elements when being iterated.
+asList
+fun <T> any_array<T>.asList(): List<T>
+Returns a List that wraps the original array.
+asReversed
+fun <T> List<T>.asReversed(): List<T>
+Returns a reversed read-only view of the original List. All changes made in the original list will be reflected in the reversed one.
+
+fun <T> MutableList<T>.asReversed(): MutableList<T>
+Returns a reversed mutable view of the original mutable List. All changes made in the original list will be reflected in the reversed one and vice versa.
+asSequence
+fun <T> Iterable<T>.asSequence(): Sequence<T>
+Creates a Sequence instance that wraps the original collection returning its elements when being iterated.
+
+fun <K, V> Map<out K, V>.asSequence(): Sequence<Entry<K, V>>
+Creates a Sequence instance that wraps the original map returning its entries when being iterated.
+
+fun <T> any_array<T>.asSequence(): Sequence<T>
+Creates a Sequence instance that wraps the original array returning its elements when being iterated.
+
+iterator
+operator fun <K, V> Map<out K, V>.iterator(): Iterator<Entry<K, V>>
+Returns an Iterator over the entries in the Map.
+
+operator fun <K, V> MutableMap<K, V>.iterator(): MutableIterator<MutableEntry<K, V>>
+Returns a MutableIterator over the mutable entries in the MutableMap.
+
+operator fun <T> Iterator<T>.iterator(): Iterator<T>
+Returns the given iterator itself. This allows to use an instance of iterator in a for loop.
+
+joinTo
+fun <T, A> Iterable<T>.joinTo(
+    buffer: A,
+    separator: CharSequence = ", ",
+    prefix: CharSequence = "",
+    postfix: CharSequence = "",
+    limit: Int = -1,
+    truncated: CharSequence = "...",
+    transform: (T) -> CharSequence = null
+): A
+Appends the string from all the elements separated using separator and using the given prefix and postfix if supplied.
+
+joinToString
+fun <T> Iterable<T>.joinToString(
+    separator: CharSequence = ", ",
+    prefix: CharSequence = "",
+    postfix: CharSequence = "",
+    limit: Int = -1,
+    truncated: CharSequence = "...",
+    transform: (T) -> CharSequence = null
+): String
+Creates a string from all the elements separated using separator and using the given prefix and postfix if supplied.
+
+
+toCollection
+fun <T, C : MutableCollection<in T>> Iterable<T>.toCollection(
+    destination: C
+): C
+Appends all elements to the given destination collection.
+
+
+toBooleanArray
+toByteArray
+toCharArray
+toDoubleArray
+toFloatArray
+
+
+toHashSet
+fun <T> Iterable<T>.toHashSet(): HashSet<T>
+Returns a HashSet of all elements.
+
+
+
+toIntArray
+fun Collection<Int>.toIntArray(): IntArray
+Returns an array of Int containing all of the elements of this collection.
+
+toList
+fun <T> Iterable<T>.toList(): List<T>
+Returns a List containing all elements.
+
+fun <K, V> Map<out K, V>.toList(): List<Pair<K, V>>
+Returns a List containing all key-value pairs.
+
+toLongArray
+fun Collection<Long>.toLongArray(): LongArray
+Returns an array of Long containing all of the elements of this collection.
+
+fun Array<out Long>.toLongArray(): LongArray
+Returns an array of Long containing all of the elements of this generic array.
+
+
+toMap
+fun <K, V> Iterable<Pair<K, V>>.toMap(): Map<K, V>
+Returns a new map containing all key-value pairs from the given collection of pairs.
+
+fun <K, V, M : MutableMap<in K, in V>> Iterable<Pair<K, V>>.toMap(
+    destination: M
+): M
+Populates and returns the destination mutable map with key-value pairs from the given collection of pairs.
+
+fun <K, V> Array<out Pair<K, V>>.toMap(): Map<K, V>
+Returns a new map containing all key-value pairs from the given array of pairs.
+
+fun <K, V, M : MutableMap<in K, in V>> Array<out Pair<K, V>>.toMap(
+    destination: M
+): M
+Populates and returns the destination mutable map with key-value pairs from the given array of pairs.
+
+fun <K, V> Sequence<Pair<K, V>>.toMap(): Map<K, V>
+Returns a new map containing all key-value pairs from the given sequence of pairs.
+
+fun <K, V, M : MutableMap<in K, in V>> Sequence<Pair<K, V>>.toMap(
+    destination: M
+): M
+Populates and returns the destination mutable map with key-value pairs from the given sequence of pairs.
+
+fun <K, V> Map<out K, V>.toMap(): Map<K, V>
+Returns a new read-only map containing all key-value pairs from the original map.
+
+fun <K, V, M : MutableMap<in K, in V>> Map<out K, V>.toMap(
+    destination: M
+): M
+Populates and returns the destination mutable map with key-value pairs from the given map.
+
+
+
+
+toMutableList
+fun <T> Iterable<T>.toMutableList(): MutableList<T>
+Returns a MutableList filled with all elements of this collection.
+
+toMutableMap
+fun <K, V> Map<out K, V>.toMutableMap(): MutableMap<K, V>
+Returns a new mutable map containing all key-value pairs from the original map.
+
+toMutableSet
+fun <T> Iterable<T>.toMutableSet(): MutableSet<T>
+Returns a mutable set containing all distinct elements from the given collection.
+
+toPair
+fun <K, V> Entry<K, V>.toPair(): Pair<K, V>
+Converts entry to Pair with key being first component and value being second.
+
+
+toProperties
+fun Map<String, String>.toProperties(): Properties
+Converts this Map to a Properties object.
+
+toSet
+fun <T> Iterable<T>.toSet(): Set<T>
+Returns a Set of all elements.
+
+toShortArray
+fun Collection<Short>.toShortArray(): ShortArray
+Returns an array of Short containing all of the elements of this collection.
+
+toSortedMap
+fun <K : Comparable<K>, V> Map<out K, V>.toSortedMap(): SortedMap<K, V>
+Converts this Map to a SortedMap so iteration order will be in key order.
+
+fun <K, V> Map<out K, V>.toSortedMap(
+    comparator: Comparator<in K>
+): SortedMap<K, V>
+Converts this Map to a SortedMap using the given comparator so that iteration order will be in the order defined by the comparator.
+
+
+toSortedSet
+fun <T : Comparable<T>> Iterable<T>.toSortedSet(): SortedSet<T>
+fun <T> Iterable<T>.toSortedSet(
+    comparator: Comparator<in T>
+): SortedSet<T>
+Returns a SortedSet of all elements.
+
+toString
+fun ByteArray.toString(charset: Charset): String
+Converts the contents of this byte array to a string using the specified charset.
+
+toTypedArray
+fun <T> Collection<T>.toTypedArray(): Array<T>
+Returns a typed array containing all of the elements of this collection.
+
+contentHashCode
+1.1
+fun <T> any_array<T>.contentHashCode(): Int
+Returns a hash code based on the contents of this array as if it is List.
+contentToString
+1.1
+fun <T> any_array<T>.contentToString(): String
+Returns a string representation of the contents of the specified array as if it is List.

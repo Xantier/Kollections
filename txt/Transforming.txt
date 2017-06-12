@@ -1,0 +1,251 @@
+map
+fun <T, R> Iterable<T>.map(transform: (T) -> R): List<R>
+Returns a list containing the results of applying the given transform function to each element in the original collection.
+
+fun <K, V, R> Map<out K, V>.map(
+    transform: (Entry<K, V>) -> R
+): List<R>
+Returns a list containing the results of applying the given transform function to each entry in the original map.
+
+mapIndexed
+fun <T, R> Iterable<T>.mapIndexed(
+    transform: (index: Int, T) -> R
+): List<R>
+Returns a list containing the results of applying the given transform function to each element and its index in the original collection.
+
+mapIndexedNotNull
+fun <T, R : Any> Iterable<T>.mapIndexedNotNull(
+    transform: (index: Int, T) -> R?
+): List<R>
+Returns a list containing only the non-null results of applying the given transform function to each element and its index in the original collection.
+
+mapIndexedNotNullTo
+fun <T, R : Any, C : MutableCollection<in R>> Iterable<T>.mapIndexedNotNullTo(
+    destination: C,
+    transform: (index: Int, T) -> R?
+): C
+Applies the given transform function to each element and its index in the original collection and appends only the non-null results to the given destination.
+
+mapIndexedTo
+fun <T, R, C : MutableCollection<in R>> Iterable<T>.mapIndexedTo(
+    destination: C,
+    transform: (index: Int, T) -> R
+): C
+Applies the given transform function to each element and its index in the original collection and appends the results to the given destination.
+
+mapKeys
+fun <K, V, R> Map<out K, V>.mapKeys(
+    transform: (Entry<K, V>) -> R
+): Map<R, V>
+Returns a new Map with entries having the keys obtained by applying the transform function to each entry in this Map and the values of this map.
+
+mapKeysTo
+fun <K, V, R, M : MutableMap<in R, in V>> Map<out K, V>.mapKeysTo(
+    destination: M,
+    transform: (Entry<K, V>) -> R
+): M
+Populates the given destination map with entries having the keys obtained by applying the transform function to each entry in this Map and the values of this map.
+
+mapNotNull
+fun <T, R : Any> Iterable<T>.mapNotNull(
+    transform: (T) -> R?
+): List<R>
+Returns a list containing only the non-null results of applying the given transform function to each element in the original collection.
+
+mapNotNullTo
+fun <T, R : Any, C : MutableCollection<in R>> Iterable<T>.mapNotNullTo(
+    destination: C,
+    transform: (T) -> R?
+): C
+Applies the given transform function to each element in the original collection and appends only the non-null results to the given destination.
+
+mapTo
+fun <T, R, C : MutableCollection<in R>> Iterable<T>.mapTo(
+    destination: C,
+    transform: (T) -> R
+): C
+Applies the given transform function to each element of the original collection and appends the results to the given destination.
+
+mapValues
+fun <K, V, R> Map<out K, V>.mapValues(
+    transform: (Entry<K, V>) -> R
+): Map<K, R>
+Returns a new map with entries having the keys of this map and the values obtained by applying the transform function to each entry in this Map.
+
+mapValuesTo
+fun <K, V, R, M : MutableMap<in K, in R>> Map<out K, V>.mapValuesTo(
+    destination: M,
+    transform: (Entry<K, V>) -> R
+): M
+Populates the given destination map with entries having the keys of this map and the values obtained by applying the transform function to each entry in this Map.
+
+reverse
+fun <T> MutableList<T>.reverse()
+Reverses elements in the list in-place.
+
+reversed
+fun <T> Iterable<T>.reversed(): List<T>
+
+
+partition
+fun <T> Iterable<T>.partition(
+    predicate: (T) -> Boolean
+): Pair<List<T>, List<T>>
+Splits the original collection into pair of lists, where first list contains elements for which predicate yielded true, while second list contains elements for which predicate yielded false.
+
+plusElement
+fun <T> Iterable<T>.plusElement(element: T): List<T>
+Returns a list containing all elements of the original collection and then the given element.
+
+slice
+fun <T> List<T>.slice(indices: IntRange): List<T>
+Returns a list containing elements at indices in the specified indices range.
+fun <T> List<T>.slice(indices: Iterable<Int>): List<T>
+
+sliceArray
+fun <T> any_array<T>.sliceArray(
+    indices: Collection<Int>
+): Array<T>
+Returns an array containing elements of this array at specified indices.
+
+
+
+sort
+fun <T : Comparable<T>> MutableList<T>.sort()
+Sorts elements in the list in-place according to their natural sort order.
+
+fun <T> any_array<T>.sort(comparison: (a: T, b: T) -> Int)
+Sorts the array in-place according to the order specified by the given comparison function.
+
+
+
+sortBy
+fun <T, R : Comparable<R>> MutableList<T>.sortBy(
+    selector: (T) -> R?)
+Sorts elements in the list in-place according to natural sort order of the value returned by specified selector function.
+
+
+sortByDescending
+fun <T, R : Comparable<R>> MutableList<T>.sortByDescending(
+    selector: (T) -> R?)
+Sorts elements in the list in-place descending according to natural sort order of the value returned by specified selector function.
+
+
+sortDescending
+fun <T : Comparable<T>> MutableList<T>.sortDescending()
+Sorts elements in the list in-place descending according to their natural sort order.
+
+
+sortWith
+fun <T> MutableList<T>.sortWith(comparator: Comparator<in T>)
+Sorts elements in the list in-place according to the order specified with comparator.
+
+fun <T> any_array<T>.sortWith(comparator: Comparator<in T>)
+Sorts the array in-place according to the order specified by the given comparator.
+
+fun <T> Array<out T>.sortWith(
+    comparator: Comparator<in T>,
+    fromIndex: Int = 0,
+    toIndex: Int = size)
+Sorts a range in the array in-place with the given comparator.
+
+
+
+
+sorted
+fun <T : Comparable<T>> Iterable<T>.sorted(): List<T>
+Returns a list of all elements sorted according to their natural sort order.
+
+
+
+
+sortedArray
+fun <T : Comparable<T>> any_array<T>.sortedArray(): Array<T>
+Returns an array with all elements of this array sorted according to their natural sort order.
+sortedArrayDescending
+fun <T : Comparable<T>> any_array<T>.sortedArrayDescending(): Array<T>
+Returns an array with all elements of this array sorted descending according to their natural sort order.
+
+
+
+sortedArrayWith
+fun <T> any_array<T>.sortedArrayWith(
+    comparator: Comparator<in T>
+): Array<out T>
+Returns an array with all elements of this array sorted according the specified comparator.
+
+
+
+
+sortedBy
+fun <T, R : Comparable<R>> Iterable<T>.sortedBy(
+    selector: (T) -> R?
+): List<T>
+Returns a list of all elements sorted according to natural sort order of the value returned by specified selector function.
+
+
+
+sortedByDescending
+fun <T, R : Comparable<R>> Iterable<T>.sortedByDescending(
+    selector: (T) -> R?
+): List<T>
+Returns a list of all elements sorted descending according to natural sort order of the value returned by specified selector function.
+
+
+
+sortedDescending
+fun <T : Comparable<T>> Iterable<T>.sortedDescending(): List<T>
+Returns a list of all elements sorted descending according to their natural sort order.
+
+
+
+
+
+sortedMapOf
+JVM
+fun <K : Comparable<K>, V> sortedMapOf(
+    vararg pairs: Pair<K, V>
+): SortedMap<K, V>
+Returns a new SortedMap with the specified contents, given as a list of pairs where the first value is the key and the second is the value.
+sortedSetOf
+JVM
+fun <T> sortedSetOf(vararg elements: T): TreeSet<T>
+Returns a new SortedSet with the given elements.
+
+fun <T> sortedSetOf(
+    comparator: Comparator<in T>,
+    vararg elements: T
+): TreeSet<T>
+Returns a new SortedSet with the given comparator and elements.
+
+
+
+
+sortedWith
+fun <T> Iterable<T>.sortedWith(
+    comparator: Comparator<in T>
+): List<T>
+Returns a list of all elements sorted according to the specified comparator.
+
+
+
+withDefault
+fun <K, V> Map<K, V>.withDefault(
+    defaultValue: (key: K) -> V
+): Map<K, V>
+Returns a wrapper of this read-only map, having the implicit default value provided with the specified function defaultValue.
+
+fun <K, V> MutableMap<K, V>.withDefault(
+    defaultValue: (key: K) -> V
+): MutableMap<K, V>
+Returns a wrapper of this mutable map, having the implicit default value provided with the specified function defaultValue.
+
+withIndex
+fun <T> Iterator<T>.withIndex(): Iterator<IndexedValue<T>>
+Returns an Iterator wrapping each value produced by this Iterator with the IndexedValue, containing value and it's index.
+
+fun <T> Iterable<T>.withIndex(): Iterable<IndexedValue<T>>
+Returns a lazy Iterable of IndexedValue for each element of the original collection.
+
+fun <T> any_array<T>.withIndex(): Iterable<IndexedValue<T>>
+Returns a lazy Iterable of IndexedValue for each element of the original array.

@@ -1,0 +1,117 @@
+fun <T> arrayListOf(vararg elements: T): ArrayList<T>
+Returns a new ArrayList with the given elements.
+
+copyOf
+fun <T> any_array<T>.copyOf(): Array<T>
+Returns new array which is a copy of the original array.
+
+Returns new array which is a copy of the original array, resized to the given newSize.
+copyOfRange
+fun <T> any_array<T>.copyOfRange(
+    fromIndex: Int,
+    toIndex: Int
+): Array<T>
+Returns new array which is a copy of range of original array.
+
+
+emptyList
+fun <T> emptyList(): List<T>
+Returns an empty read-only list. The returned list is serializable (JVM).
+emptyMap
+fun <K, V> emptyMap(): Map<K, V>
+Returns an empty read-only map of specified type. The returned map is serializable (JVM).
+emptySet
+fun <T> emptySet(): Set<T>
+Returns an empty read-only set. The returned set is serializable (JVM).
+
+fill
+JVM
+fun <T> any_array<T>.fill(
+    element: T,
+    fromIndex: Int = 0,
+    toIndex: Int = size)
+Fills original array with the provided value.
+Appends all elements matching the given predicate to the given destination.
+
+hashMapOf
+fun <K, V> hashMapOf(): HashMap<K, V>
+Returns an empty new HashMap.
+
+fun <K, V> hashMapOf(vararg pairs: Pair<K, V>): HashMap<K, V>
+Returns a new HashMap with the specified contents, given as a list of pairs where the first component is the key and the second is the value.
+
+hashSetOf
+fun <T> hashSetOf(): HashSet<T>
+Returns an empty new HashSet.
+
+fun <T> hashSetOf(vararg elements: T): HashSet<T>
+Returns a new HashSet with the given elements.
+
+
+
+linkedMapOf
+fun <K, V> linkedMapOf(): LinkedHashMap<K, V>
+Returns an empty new LinkedHashMap.
+
+fun <K, V> linkedMapOf(
+    vararg pairs: Pair<K, V>
+): LinkedHashMap<K, V>
+Returns a new LinkedHashMap with the specified contents, given as a list of pairs where the first component is the key and the second is the value. If multiple pairs have the same key, the resulting map will contain the value from the last of those pairs. Entries of the map are iterated in the order they were specified.
+linkedSetOf
+fun <T> linkedSetOf(): LinkedHashSet<T>
+Returns an empty new LinkedHashSet.
+
+fun <T> linkedSetOf(vararg elements: T): LinkedHashSet<T>
+Returns a new LinkedHashSet with the given elements. Elements of the set are iterated in the order they were specified.
+
+listOf
+fun <T> listOf(vararg elements: T): List<T>
+Returns a new read-only list of given elements. The returned list is serializable (JVM).
+
+fun <T> listOf(): List<T>
+Returns an empty read-only list. The returned list is serializable (JVM).
+
+fun <T> listOf(element: T): List<T>
+Returns an immutable list containing only the specified object element. The returned list is serializable.
+listOfNotNull
+fun <T : Any> listOfNotNull(element: T?): List<T>
+Returns a new read-only list either of single given element, if it is not null, or empty list it the element is null. The returned list is serializable (JVM).
+
+fun <T : Any> listOfNotNull(vararg elements: T?): List<T>
+Returns a new read-only list only of those given elements, that are not null. The returned list is serializable (JVM).
+
+mapOf
+fun <K, V> mapOf(vararg pairs: Pair<K, V>): Map<K, V>
+Returns a new read-only map with the specified contents, given as a list of pairs where the first value is the key and the second is the value. If multiple pairs have the same key, the resulting map will contain the value from the last of those pairs.
+
+fun <K, V> mapOf(): Map<K, V>
+Returns an empty read-only map. The returned map is serializable (JVM).
+
+fun <K, V> mapOf(pair: Pair<K, V>): Map<K, V>
+Returns an immutable map, mapping only the specified key to the specified value. The returned map is serializable.
+
+mutableListOf
+
+fun <T> mutableListOf(vararg elements: T): MutableList<T>
+Returns a new MutableList with the given elements.
+mutableMapOf
+
+fun <K, V> mutableMapOf(
+    vararg pairs: Pair<K, V>
+): MutableMap<K, V>
+Returns a new MutableMap with the specified contents, given as a list of pairs where the first component is the key and the second is the value. If multiple pairs have the same key, the resulting map will contain the value from the last of those pairs. Entries of the map are iterated in the order they were specified.
+
+mutableSetOf
+fun <T> mutableSetOf(vararg elements: T): MutableSet<T>
+Returns a new MutableSet.
+
+setOf
+fun <T> setOf(vararg elements: T): Set<T>
+Returns a new read-only set with the given elements. Elements of the set are iterated in the order they were specified. The returned set is serializable (JVM).
+
+setValue
+operator fun <V> MutableMap<in String, in V>.setValue(
+    thisRef: Any?,
+    property: KProperty<*>,
+    value: V)
+Stores the value of the property for the given object in this mutable map.

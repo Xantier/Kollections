@@ -1,3 +1,57 @@
+associate
+fun <T, K, V> Iterable<T>.associate(
+    transform: (T) -> Pair<K, V>
+): Map<K, V>
+Returns a Map containing key-value pairs provided by transform function applied to elements of the given collection.
+
+associateBy
+fun <T, K> Iterable<T>.associateBy(
+    keySelector: (T) -> K
+): Map<K, T>
+Returns a Map containing the elements from the given collection indexed by the key returned from keySelector function applied to each element.
+
+associateByTo
+fun <T, K, M : MutableMap<in K, in T>> Iterable<T>.associateByTo(
+    destination: M,
+    keySelector: (T) -> K
+): M
+Populates and returns the destination mutable map with key-value pairs, where key is provided by the keySelector function applied to each element of the given collection and value is the element itself.
+
+associateTo
+fun <T, K, V, M : MutableMap<in K, in V>> Iterable<T>.associateTo(
+    destination: M,
+    transform: (T) -> Pair<K, V>
+): M
+Populates and returns the destination mutable map with key-value pairs provided by transform function applied to each element of the given collection.
+
+flatMap
+fun <T, R> Iterable<T>.flatMap(
+    transform: (T) -> Iterable<R>
+): List<R>
+Returns a single list of all elements yielded from results of transform function being invoked on each element of original collection.
+
+flatMapTo
+fun <T, R, C : MutableCollection<in R>> Iterable<T>.flatMapTo(
+    destination: C,
+    transform: (T) -> Iterable<R>
+): C
+Appends all elements yielded from results of transform function being invoked on each element of original collection, to the given destination.
+
+flatten
+fun <T> Array<out Array<out T>>.flatten(): List<T>
+Returns a single list of all elements from all arrays in the given array.
+
+
+
+unzip
+fun <T, R> Array<out Pair<T, R>>.unzip(): Pair<List<T>, List<R>>
+Returns a pair of lists, where first list is built from the first values of each pair from this array, second list is built from the second values of each pair from this array.
+
+fun <T, R> Iterable<Pair<T, R>>.unzip(): Pair<List<T>, List<R>>
+Returns a pair of lists, where first list is built from the first values of each pair from this collection, second list is built from the second values of each pair from this collection.
+
+
+
 map
 fun <T, R> Iterable<T>.map(transform: (T) -> R): List<R>
 Returns a list containing the results of applying the given transform function to each element in the original collection.
@@ -98,58 +152,8 @@ fun <T> Iterable<T>.plusElement(element: T): List<T>
 Returns a list containing all elements of the original collection and then the given element.
 
 slice
-fun <T> List<T>.slice(indices: IntRange): List<T>
-Returns a list containing elements at indices in the specified indices range.
 fun <T> List<T>.slice(indices: Iterable<Int>): List<T>
-
-sliceArray
-fun <T> any_array<T>.sliceArray(
-    indices: Collection<Int>
-): Array<T>
-Returns an array containing elements of this array at specified indices.
-
-
-
-sort
-fun <T : Comparable<T>> MutableList<T>.sort()
-Sorts elements in the list in-place according to their natural sort order.
-
-fun <T> any_array<T>.sort(comparison: (a: T, b: T) -> Int)
-Sorts the array in-place according to the order specified by the given comparison function.
-
-
-
-sortBy
-fun <T, R : Comparable<R>> MutableList<T>.sortBy(
-    selector: (T) -> R?)
-Sorts elements in the list in-place according to natural sort order of the value returned by specified selector function.
-
-
-sortByDescending
-fun <T, R : Comparable<R>> MutableList<T>.sortByDescending(
-    selector: (T) -> R?)
-Sorts elements in the list in-place descending according to natural sort order of the value returned by specified selector function.
-
-
-sortDescending
-fun <T : Comparable<T>> MutableList<T>.sortDescending()
-Sorts elements in the list in-place descending according to their natural sort order.
-
-
-sortWith
-fun <T> MutableList<T>.sortWith(comparator: Comparator<in T>)
-Sorts elements in the list in-place according to the order specified with comparator.
-
-fun <T> any_array<T>.sortWith(comparator: Comparator<in T>)
-Sorts the array in-place according to the order specified by the given comparator.
-
-fun <T> Array<out T>.sortWith(
-    comparator: Comparator<in T>,
-    fromIndex: Int = 0,
-    toIndex: Int = size)
-Sorts a range in the array in-place with the given comparator.
-
-
+Returns a list containing elements at indices in the specified indices range.
 
 
 sorted
@@ -228,24 +232,15 @@ fun <T> Iterable<T>.sortedWith(
 Returns a list of all elements sorted according to the specified comparator.
 
 
+zip
+infix fun <T, R> Iterable<T>.zip(
+    other: Array<out R>
+): List<Pair<T, R>>
+Returns a list of pairs built from elements of both collections with same indexes. List has length of shortest collection.
 
-withDefault
-fun <K, V> Map<K, V>.withDefault(
-    defaultValue: (key: K) -> V
-): Map<K, V>
-Returns a wrapper of this read-only map, having the implicit default value provided with the specified function defaultValue.
+fun <T, R, V> Iterable<T>.zip(
+    other: Array<out R>,
+    transform: (a: T, b: R) -> V
+): List<V>
+Returns a list of values built from elements of both collections with same indexes using provided transform. List has length of shortest collection.
 
-fun <K, V> MutableMap<K, V>.withDefault(
-    defaultValue: (key: K) -> V
-): MutableMap<K, V>
-Returns a wrapper of this mutable map, having the implicit default value provided with the specified function defaultValue.
-
-withIndex
-fun <T> Iterator<T>.withIndex(): Iterator<IndexedValue<T>>
-Returns an Iterator wrapping each value produced by this Iterator with the IndexedValue, containing value and it's index.
-
-fun <T> Iterable<T>.withIndex(): Iterable<IndexedValue<T>>
-Returns a lazy Iterable of IndexedValue for each element of the original collection.
-
-fun <T> any_array<T>.withIndex(): Iterable<IndexedValue<T>>
-Returns a lazy Iterable of IndexedValue for each element of the original array.

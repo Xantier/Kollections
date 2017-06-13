@@ -1,11 +1,5 @@
 # Filtering
 
-filter
-fun <K, V> Map<out K, V>.filter(
-    predicate: (Entry<K, V>) -> Boolean
-): Map<K, V>
-Returns a new map containing all key-value pairs matching the given predicate.
-
 fun <T> Iterable<T>.filter(
     predicate: (T) -> Boolean
 ): List<T>
@@ -35,6 +29,7 @@ fun <T, C : MutableCollection<in T>> Iterable<T>.filterIndexedTo(
     predicate: (index: Int, T) -> Boolean
 ): C
 Appends all elements matching the given predicate to the given destination.
+
 filterIsInstance
 fun <R> Iterable<*>.filterIsInstance(): List<R>
 Returns a list containing all elements that are instances of specified type parameter R.
@@ -43,6 +38,7 @@ fun <R> Iterable<*>.filterIsInstance(
     klass: Class<R>
 ): List<R>
 Returns a list containing all elements that are instances of specified class.
+
 filterIsInstanceTo
 fun <R, C : MutableCollection<in R>> Iterable<*>.filterIsInstanceTo(
     destination: C
@@ -343,24 +339,6 @@ minusElement
 fun <T> Iterable<T>.minusElement(element: T): List<T>
 Returns a list containing all elements of the original collection without the first occurrence of the given element.
 
-requireNoNulls
-fun <T : Any> Iterable<T?>.requireNoNulls(): Iterable<T>
-fun <T : Any> List<T?>.requireNoNulls(): List<T>
-fun <T : Any> Array<T?>.requireNoNulls(): Array<T>
-Returns an original collection containing all the non-null elements, throwing an IllegalArgumentException if there are any null elements.
-
-retainAll
-fun <T> MutableCollection<out T>.retainAll(
-    elements: Collection<T>
-): Boolean
-Retains only the elements in this collection that are contained in the specified collection.
-
-fun <T> MutableIterable<T>.retainAll(
-    predicate: (T) -> Boolean
-): Boolean
-Retains only elements of this MutableIterable that match the given predicate.
-
-
 single
 fun <T> Iterable<T>.single(): T
 Returns the single element, or throws an exception if the collection is empty or has more than one element.
@@ -370,4 +348,11 @@ singleOrNull
 fun <T> Iterable<T>.singleOrNull(): T?
 Returns single element, or null if the collection is empty or has more than one element.
 
+union
+infix fun <T> Iterable<T>.union(other: Iterable<T>): Set<T>
+Returns a set containing all distinct elements from both collections.
 
+# Full collection checks
+orEmpty
+fun <T> Collection<T>?.orEmpty(): Collection<T>
+Returns this Collection if it's not null and the empty list otherwise.

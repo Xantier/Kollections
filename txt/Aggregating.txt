@@ -113,16 +113,13 @@ fun <T, K, M : MutableMap<in K, Int>> Grouping<T, K>.eachCountTo(
 ): M
 Groups elements from the Grouping source by key and counts elements in each group to the given destination map.
 
-
-
-# Aggregating
-
 aggregate
 1.1
 fun <T, K, R> Grouping<T, K>.aggregate(
     operation: (key: K, accumulator: R?, element: T, first: Boolean) -> R
 ): Map<K, R>
 Groups elements from the Grouping source by key and applies operation to the elements of each group sequentially, passing the previously accumulated value and the current element as arguments, and stores the results in a new map.
+
 aggregateTo
 1.1
 fun <T, K, R, M : MutableMap<in K, R>> Grouping<T, K>.aggregateTo(
@@ -132,19 +129,25 @@ fun <T, K, R, M : MutableMap<in K, R>> Grouping<T, K>.aggregateTo(
 Groups elements from the Grouping source by key and applies operation to the elements of each group sequentially, passing the previously accumulated value and the current element as arguments, and stores the results in the given destination map.
 
 
+
+# Aggregating
+
+
 count
 fun <T> Iterable<T>.count(): Int
 Returns the number of elements in this collection.
+
 fun <T> Iterable<T>.count(predicate: (T) -> Boolean): Int
 Returns the number of entries matching the given predicate.
 
 average
-fun Iterable<Byte>.average(): Double
+fun Iterable<Int>.average(): Double
 Returns an average value of elements in the collection.
 
 max
-fun Iterable<Double>.max(): Double?
+fun Iterable<Int>.max(): Double?
 Returns the largest element or null if there are no elements.
+
 maxBy
 fun <T, R : Comparable<R>> Iterable<T>.maxBy(
     selector: (T) -> R

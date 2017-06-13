@@ -13,4 +13,9 @@ class AggregatingTest {
     fun runGrouping() {
         grouping()
     }
+
+    @Test
+    fun runAggregatin() {
+        aggregating()
+    }
 }

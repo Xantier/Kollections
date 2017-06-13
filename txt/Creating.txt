@@ -115,3 +115,14 @@ operator fun <V> MutableMap<in String, in V>.setValue(
     property: KProperty<*>,
     value: V)
 Stores the value of the property for the given object in this mutable map.
+
+withDefault
+fun <K, V> Map<K, V>.withDefault(
+    defaultValue: (key: K) -> V
+): Map<K, V>
+Returns a wrapper of this read-only map, having the implicit default value provided with the specified function defaultValue.
+
+fun <K, V> MutableMap<K, V>.withDefault(
+    defaultValue: (key: K) -> V
+): MutableMap<K, V>
+Returns a wrapper of this mutable map, having the implicit default value provided with the specified function defaultValue.

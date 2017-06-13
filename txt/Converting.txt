@@ -200,3 +200,15 @@ contentToString
 1.1
 fun <T> any_array<T>.contentToString(): String
 Returns a string representation of the contents of the specified array as if it is List.
+
+
+
+withIndex
+fun <T> Iterator<T>.withIndex(): Iterator<IndexedValue<T>>
+Returns an Iterator wrapping each value produced by this Iterator with the IndexedValue, containing value and it's index.
+
+fun <T> Iterable<T>.withIndex(): Iterable<IndexedValue<T>>
+Returns a lazy Iterable of IndexedValue for each element of the original collection.
+
+fun <T> any_array<T>.withIndex(): Iterable<IndexedValue<T>>
+Returns a lazy Iterable of IndexedValue for each element of the original array.

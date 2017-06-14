@@ -135,9 +135,6 @@ fun <K, V, M : MutableMap<in K, in V>> Map<out K, V>.toMap(
 ): M
 Populates and returns the destination mutable map with key-value pairs from the given map.
 
-
-
-
 toMutableList
 fun <T> Iterable<T>.toMutableList(): MutableList<T>
 Returns a MutableList filled with all elements of this collection.
@@ -176,7 +173,6 @@ fun <K, V> Map<out K, V>.toSortedMap(
 ): SortedMap<K, V>
 Converts this Map to a SortedMap using the given comparator so that iteration order will be in the order defined by the comparator.
 
-
 toSortedSet
 fun <T : Comparable<T>> Iterable<T>.toSortedSet(): SortedSet<T>
 fun <T> Iterable<T>.toSortedSet(
@@ -200,8 +196,6 @@ contentToString
 1.1
 fun <T> any_array<T>.contentToString(): String
 Returns a string representation of the contents of the specified array as if it is List.
-
-
 
 withIndex
 fun <T> Iterator<T>.withIndex(): Iterator<IndexedValue<T>>

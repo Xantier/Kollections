@@ -1,6 +1,3 @@
-
-
-
 forEach
 fun <T> Iterable<T>.forEach(action: (T) -> Unit)
 Performs the given action on each element.

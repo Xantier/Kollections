@@ -54,8 +54,6 @@ Returns true if this map is not empty.
 fun <T> Collection<T>.isNotEmpty(): Boolean
 Returns true if the collection is not empty.
 
-
-
 # Array content checks
 
 contentDeepEquals

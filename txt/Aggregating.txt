@@ -180,15 +180,9 @@ sum
 fun Iterable<Int>.sum(): Int
 Returns the sum of all elements in the collection.
 
-
-
-
 sumBy
 fun <T> Iterable<T>.sumBy(selector: (T) -> Int): Int
 Returns the sum of all values produced by selector function applied to each element in the collection.
-
-
-
 
 sumByDouble
 fun <T> Iterable<T>.sumByDouble(

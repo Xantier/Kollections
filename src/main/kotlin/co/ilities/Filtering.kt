@@ -50,7 +50,9 @@ fun getting() {
     println("GetOrNull: " + intList.getOrNull(632)) // null
 
     // Map only
-    println("GetKey: " + aMap.getValue("hi")) // 4
+    println("Get from Map (clumsy syntax): " + aMap.get("hi")) // 1
+    println("Get: " + aMap["hi"]) // 1
+    println("GetValue: " + aMap.getValue("hi")) // 1
     println("GetOrDefault: " + aMap.getOrDefault("HI", 4)) // 4
 
     // Mutable map only

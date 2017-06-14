@@ -55,7 +55,7 @@ fun foldAndReduce(): Unit {
 }
 
 fun grouping() {
-    val ourListGrouped = intList.groupBy { value -> value }
+    val ourListGrouped = intList.groupBy { value -> 2 }
     println(ourListGrouped) // {1=[1], 2=[2], 3=[3]}
 
     val ourListGroupedWithNewValues = intList.groupBy({ it }, { it + 1 })
@@ -78,8 +78,9 @@ fun grouping() {
     println(destinationIntIntMap) // {1=1, 2=2, 3=3}
 
     /**
-     * Create a grouping by a lambda, aggregates each group.
-     * If isFirst --> accumulator is null
+     * Create a grouping by a lambda, aggregate each group.
+     * Lambda receives all keys, nullable accumulator and the element plus a flag if value is the first on from this group.
+     * If isFirst --> accumulator is null.
      */
     val aggregatedString = intList.groupingBy { "key" }.aggregate({ key, accumulator: String?, element, isFirst ->
         println("accumulator: $accumulator, value: $key, element: $element, isFirst: $isFirst")

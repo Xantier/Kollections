@@ -15,7 +15,7 @@ class AggregatingTest {
     }
 
     @Test
-    fun runAggregatin() {
+    fun runAggregating() {
         aggregating()
     }
 }

@@ -37,5 +37,3 @@ fun transformers() {
     println("Zip with predicate: " + listOf(3, 4).zip(intList) { firstElem, secondElem -> Pair(firstElem - 2, secondElem + 2) }) // [(1,3), (2,4)]
     println("Unzip: " + listOf(Pair("hi", 1), Pair("hello", 2)).unzip()) // Pair([hi, hello], [1,2])
 }
-
-

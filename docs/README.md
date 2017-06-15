@@ -1,1 +1,1 @@
-[Kollections Cheatsheet](https://github.com/Xantier/Kollections/blob/master/docs/xantier_kotlin-collection-extensions.pdf)
+[Kollections Cheatsheet](https://github.com/Xantier/Kollections/raw/master/docs/xantier_kotlin-collection-extensions.pdf)

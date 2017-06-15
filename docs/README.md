@@ -6,7 +6,7 @@
                 table.cheat_sheet_output {
                     margin: 0;
                 }
-
+                .container {width: 1200px;margin-right: auto;margin-left: auto;}
                 .cheat_sheet_output_wrapper {
                     padding: 0;
                     margin-bottom: 12px;

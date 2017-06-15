@@ -1,4 +1,4 @@
-<div id="body_wide" style="max-width: 1024px;">
+<div id="body_wide" style="max-width: 1200px;">
     <div id="body_wide_inner">
         <div id="body_wide_shadow">
             <div class="clear"></div>

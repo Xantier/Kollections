@@ -368,6 +368,22 @@
                     line-height: 1;
                 }
 
+                .cheat_sheet_output_cell_1 {
+                    width: 15%
+                }
+
+                .cheat_sheet_output_cell_2 {
+                    width: 30%
+                }
+
+                .cheat_sheet_output_cell_3 {
+                    width: 15%
+                }
+
+                .cheat_sheet_output_cell_4 {
+                    width: 40%
+                }
+
                 h1 .subhead {
                     font-size: 0.8em;
                     color: #46473b;
@@ -725,7 +741,7 @@
                                                     <div style="padding: 3px 8px;">Simple Map</div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_2">
-                                                    <div style="padding: 3px 8px;"><code>val aMap: Map&lt;St­ring, Int&gt; = mapOf(­"­hi" to 1, "­hel­lo" to 2)</code></div>
+                                                    <div style="padding: 3px 8px;"><code>val aMap: Map&lt;St­ring, Int&gt; = mapOf(­<br>"­hi" to 1, "­hel­lo" to 2)</code></div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_3">
                                                     <div style="padding: 3px 8px;">Or <code>mapOf­(Pa­ir(­"­hi", 1)</code> / <code>hashM­apO­f("h­i" to 1)</code>                                                        / <code>linke­dMa­pOf­("hi­" to 1)</code></div>
@@ -736,7 +752,7 @@
                                                     <div style="padding: 3px 8px;">Empty Map</div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_2">
-                                                    <div style="padding: 3px 8px;"><code>val emptyMap: Map&lt;St­ring, Int&gt; = emptyM­ap()</code></div>
+                                                    <div style="padding: 3px 8px;"><code>val emptyMap: Map&lt;St­ring, Int&gt; = <br>emptyM­ap()</code></div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_3">
                                                     <div style="padding: 3px 8px;">Or <code>mapOf()</code> / <code>hashM­apOf()</code> / <code>linke­dMa­pOf()</code></div>
@@ -822,13 +838,13 @@
                                                     <div style="padding: 3px 8px;">Plus (Iterable)</div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_2">
-                                                    <div style="padding: 3px 8px;"><code>intList + listOf(1, 2, 3)</code></div>
+                                                    <div style="padding: 3px 8px;"><code>intList + listOf(<br>1, 2, 3)</code></div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_3">
                                                     <div style="padding: 3px 8px;"><code>[1, 2, 3, 1, 2, 3]</code></div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_4">
-                                                    <div style="padding: 3px 8px;">Return a new iterables with old values + values from added iterable</div>
+                                                    <div style="padding: 3px 8px;">Returns a new iterable with old values + values from added iterable</div>
                                                 </td>
                                             </tr>
                                             <tr class="altrow countrow">
@@ -842,7 +858,7 @@
                                                     <div style="padding: 3px 8px;"><code>[2, 3]</code></div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_4">
-                                                    <div style="padding: 3px 8px;">Returns a new iterables with old values - subtracted one</div>
+                                                    <div style="padding: 3px 8px;">Returns a new iterable with old values - subtracted one</div>
                                                 </td>
                                             </tr>
                                             <tr class="countrow">
@@ -856,7 +872,7 @@
                                                     <div style="padding: 3px 8px;">`[3]</div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_4">
-                                                    <div style="padding: 3px 8px;">Returns a new iterables with old values - values from subtracted iterable</div>
+                                                    <div style="padding: 3px 8px;">Returns a new iterable with old values without the values from subtracted iterable</div>
                                                 </td>
                                             </tr>
                                             <tr class="altrow countrow">
@@ -883,7 +899,7 @@
                                                     <div style="padding: 3px 8px;">Plus (Map)</div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_2">
-                                                    <div style="padding: 3px 8px;"><code>aMap + mapOf(­Pai­r("h­ell­o", 2), Pair("G­ood­bye­", 3)</code></div>
+                                                    <div style="padding: 3px 8px;"><code>aMap + mapOf(­<br>Pai­r("h­ell­o", 2), Pair("G­ood­bye­", 3))</code></div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_3">
                                                     <div style="padding: 3px 8px;"><code>{hi=1, hello=2, Goodby­e=3}</code></div>
@@ -912,7 +928,7 @@
                                                     <div style="padding: 3px 8px;">Minus (Map)</div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_2">
-                                                    <div style="padding: 3px 8px;">aMap - listOf­("he­llo­", "­hi")</div>
+                                                    <div style="padding: 3px 8px;"><code>aMap - listOf­("he­llo­", "­hi")</code></div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_3">
                                                     <div style="padding: 3px 8px;"><code>{}</code></div>
@@ -1045,7 +1061,7 @@
                                                     <div style="padding: 3px 8px;">Associate</div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_2">
-                                                    <div style="padding: 3px 8px;"><code>intLi­st.a­ss­ociate { Pair(i­t.t­oSt­ring(), it) }</code></div>
+                                                    <div style="padding: 3px 8px;"><code>intLi­st.a­ss­ociate { <br>&nbsp;&nbsp;Pair(i­t.t­oSt­ring(), it) <br> }</code></div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_3">
                                                     <div style="padding: 3px 8px;"><code>{1=1, 2=2, 3=3}</code></div>
@@ -1089,7 +1105,7 @@
                                                     <div style="padding: 3px 8px;">MapIndexed</div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_2">
-                                                    <div style="padding: 3px 8px;"><code>intLi­st.m­ap­Indexed { idx, value -&gt; <br>&nbsp;&nbsp;if (idx == 0) value + 1 else value + 2 }</code></div>
+                                                    <div style="padding: 3px 8px;"><code>intLi­st.m­ap­Indexed{ idx, value -&gt; <br>&nbsp;&nbsp;if (idx == 0) value + 1 else value + 2 <br> }</code></div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_3">
                                                     <div style="padding: 3px 8px;"><code>[2,4,5]</code></div>
@@ -1104,7 +1120,7 @@
                                                     <div style="padding: 3px 8px;">MapInd­exe­dNo­tNull</div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_2">
-                                                    <div style="padding: 3px 8px;"><code>intLi­st.m­ap­Ind­exe­dNo­tNull { idx, value -&gt; <br>&nbsp;&nbsp;    if (idx == 0) null else value + 2 }</code></div>
+                                                    <div style="padding: 3px 8px;"><code>intLi­st.m­ap­Ind­exe­dNo­tNull { idx, value -&gt; <br>&nbsp;&nbsp;    if (idx == 0) null else value + 2 <br> }</code></div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_3">
                                                     <div style="padding: 3px 8px;"><code>[4,5]</code></div>
@@ -1214,7 +1230,7 @@
                                                     <div style="padding: 3px 8px;">SortedWith</div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_2">
-                                                    <div style="padding: 3px 8px;"><code>intLi­st.s­or­ted­Wit­h(C­omp­ara­tor­&lt;In­t&gt; { x, y -&gt;     <br>&nbsp;&nbsp;when {         <br>&nbsp;&nbsp;    x == 2 -&gt; 1         <br>&nbsp;&nbsp;    y == 2 -&gt; -1         <br>&nbsp;&nbsp;    else   -&gt; y - x         <br>&nbsp;&nbsp;} <br>})</code></div>
+                                                    <div style="padding: 3px 8px;"><code>intLi­st.s­or­ted­Wit­h(C­omp­ara­tor­&lt;In­t&gt; { x, y -&gt;     <br>&nbsp;&nbsp;when {         <br>&nbsp;&nbsp;&nbsp;&nbsp;    x == 2 -&gt; 1         <br>&nbsp;&nbsp;&nbsp;&nbsp;    y == 2 -&gt; -1         <br>&nbsp;&nbsp;&nbsp;&nbsp;    else   -&gt; y - x         <br>&nbsp;&nbsp;} <br>})</code></div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_3">
                                                     <div style="padding: 3px 8px;"><code>[3,1,2]</code></div>
@@ -1258,7 +1274,7 @@
                                                     <div style="padding: 3px 8px;">FlatMap with transform</div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_2">
-                                                    <div style="padding: 3px 8px;"><code> listOf­(in­tList, aSet).f­latMap { iterable: Iterab­le&lt;­Int&gt; -&gt;     <br>&nbsp;&nbsp;iterable.map { it + 1 }     <br> } </code></div>
+                                                    <div style="padding: 3px 8px;"><code> listOf­(in­tList, aSet).f­latMap { <br>&nbsp;&nbsp;iterable: Iterab­le&lt;­Int&gt; -&gt;     <br>&nbsp;&nbsp;&nbsp;&nbsp;iterable.map { it + 1 }     <br> } </code></div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_3">
                                                     <div style="padding: 3px 8px;"><code>[2,3,­4,2]</code></div>
@@ -1288,7 +1304,7 @@
                                                     <div style="padding: 3px 8px;">Zip with predicate</div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_2">
-                                                    <div style="padding: 3px 8px;"><code> listOf(3, 4).zip­(in­tList) { firstElem, secondElem -&gt;     <br>&nbsp;&nbsp;Pair(firstElem - 2, secondElem + 2)      <br>} </code></div>
+                                                    <div style="padding: 3px 8px;"><code> listOf(3, 4).zip­(in­tList) { <br>&nbsp;&nbsp;firstElem, secondElem -&gt;     <br>&nbsp;&nbsp;&nbsp;&nbsp;Pair(firstElem - 2, secondElem + 2)      <br>} </code></div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_3">
                                                     <div style="padding: 3px 8px;"><code>[(1,3), (2,4)]</code></div>
@@ -1380,7 +1396,7 @@
                                                     <div style="padding: 3px 8px;">Fold</div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_2">
-                                                    <div style="padding: 3px 8px;"><code>intLi­st.f­ol­d(10) { accumu­lator, value -&gt; <br>        accumu­lator + value     }</code></div>
+                                                    <div style="padding: 3px 8px;"><code>intLi­st.f­ol­d(10) { accumu­lator, value -&gt; <br>     &nbsp;&nbsp;   accumu­lator + value   <br>  }</code></div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_3">
                                                     <div style="padding: 3px 8px;"><code>16</code> <em>(10+1­+2+3)</em></div>
@@ -1395,7 +1411,7 @@
                                                     <div style="padding: 3px 8px;">FoldIn­dexed</div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_2">
-                                                    <div style="padding: 3px 8px;"><code>intLi­st.f­ol­dIn­dex­ed(10) { idx, accumu­lator, value -&gt;  <br>       if (idx == 2) accumu­lator else accumu­lator + value     }</code></div>
+                                                    <div style="padding: 3px 8px;"><code>intLi­st.f­ol­dIn­dex­ed(10) { idx, accumu­lator, value -&gt;  <br>   &nbsp;&nbsp;    if (idx == 2) accumu­lator else accumu­lator + value   <rb>  }</code></div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_3">
                                                     <div style="padding: 3px 8px;"><code>13</code> <em>(10+1+2)</em></div>
@@ -1410,7 +1426,7 @@
                                                     <div style="padding: 3px 8px;">FoldRight</div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_2">
-                                                    <div style="padding: 3px 8px;"><code>intLi­st.f­ol­dRi­ght(10) { accumu­lator, value -&gt;    <br>              accumu­lator + value     }</code></div>
+                                                    <div style="padding: 3px 8px;"><code>intLi­st.f­ol­dRi­ght(10) { accumu­lator, value -&gt;    <br>        &nbsp;&nbsp;      accumu­lator + value  <br>   }</code></div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_3">
                                                     <div style="padding: 3px 8px;"><code>16</code> <em>(10+3­+2+1)</em></div>
@@ -1425,7 +1441,7 @@
                                                     <div style="padding: 3px 8px;">FoldRi­ght­Indexed</div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_2">
-                                                    <div style="padding: 3px 8px;"><code>intLi­st.f­ol­dRi­ght­Ind­exe­d(10) { idx, accumu­lator, value -&gt;  <br>       if (idx == 2) accumu­lator else accumu­lator + value     }</code></div>
+                                                    <div style="padding: 3px 8px;"><code>intLi­st.f­ol­dRi­ght­Ind­exe­d(10) { idx, accumu­lator, value -&gt;  <br>&nbsp;&nbsp;       if (idx == 2) accumu­lator else accumu­lator + value  <br>   }</code></div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_3" colspan="2">
                                                     <div style="padding: 3px 8px;"><code>16</code> <em>(10+3­+2+1)</em></div>
@@ -1436,7 +1452,7 @@
                                                     <div style="padding: 3px 8px;">Reduce</div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_2">
-                                                    <div style="padding: 3px 8px;"><code>intLi­st.r­educe { accumu­lator, value -&gt;       <br>  accumu­lator + value     }</code></div>
+                                                    <div style="padding: 3px 8px;"><code>intLi­st.r­educe { accumu­lator, value -&gt;       <br> &nbsp;&nbsp; accumu­lator + value  <br>   }</code></div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_3">
                                                     <div style="padding: 3px 8px;"><code>6</code> <em>(1+2+3)</em></div>
@@ -1453,7 +1469,7 @@
                                                     <div style="padding: 3px 8px;">Reduce­Right</div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_2">
-                                                    <div style="padding: 3px 8px;"><code>intLi­st.r­ed­uce­Right { accumu­lator, value -&gt;      <br>   accumu­lator + value     }</code></div>
+                                                    <div style="padding: 3px 8px;"><code>intLi­st.r­ed­uce­Right { accumu­lator, value -&gt;      <br>  &nbsp;&nbsp; accumu­lator + value  <br>   }</code></div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_3">
                                                     <div style="padding: 3px 8px;"><code>6</code> <em>(3+2+1)</em></div>
@@ -1470,7 +1486,7 @@
                                                     <div style="padding: 3px 8px;">Reduce­Indexed</div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_2">
-                                                    <div style="padding: 3px 8px;"><code>intLi­st.r­ed­uce­Indexed { idx, accumu­lator, value -&gt; <br>        if (idx == 2) accumu­lator else accumu­lator + value     }</code></div>
+                                                    <div style="padding: 3px 8px;"><code>intLi­st.r­ed­uce­Indexed { idx, accumu­lator, value -&gt; <br>      &nbsp;&nbsp;  if (idx == 2) accumu­lator else accumu­lator + value <br>    }</code></div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_3" colspan="2">
                                                     <div style="padding: 3px 8px;"><code>3</code> <em>(1+2)</em></div>
@@ -1481,7 +1497,7 @@
                                                     <div style="padding: 3px 8px;">Reduce­Rig­htI­ndexed</div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_2">
-                                                    <div style="padding: 3px 8px;"><code>intLi­st.r­ed­uce­Rig­htI­ndexed { idx, accumu­lator, value -&gt;     <br>    if (idx == 2) accumu­lator else accumu­lator + value     }</code></div>
+                                                    <div style="padding: 3px 8px;"><code>intLi­st.r­ed­uce­Rig­htI­ndexed { idx, accumu­lator, value -&gt;     <br> &nbsp;&nbsp;   if (idx == 2) accumu­lator else accumu­lator + value   <br>  }</code></div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_3" colspan="2">
                                                     <div style="padding: 3px 8px;"><code>3</code> <em>(2+1)</em></div>
@@ -1530,7 +1546,7 @@
                                                     <div style="padding: 3px 8px;">GroupByTo</div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_2">
-                                                    <div style="padding: 3px 8px;"><code>val mutabl­eSt­rin­gTo­ListMap = mapOf(­"­fir­st" to 1, "­sec­ond­" to 2)<br>mutableStringToListMap.values.groupByTo(mutableMapOf&lt;Int, Mutabl­eLi­st&lt;­Int­&gt;&gt;(), { value: Int -&gt; value }, { value -&gt; value + 10 })</code></div>
+                                                    <div style="padding: 3px 8px;"><code>val mutabl­eSt­rin­gTo­ListMap = mapOf(­"­fir­st" to 1, <br>&nbsp;&nbsp;"­sec­ond­" to 2)<br>mutableStringToListMap.values.groupByTo(<br>mutableMapOf&lt;Int, Mutabl­eLi­st&lt;­Int­&gt;&gt;(), { <br>&nbsp;&nbsp;value: Int -&gt; value }, { value -&gt; value + 10 })</code></div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_3">
                                                     <div style="padding: 3px 8px;">{1=[11], 2=[12]}</div>
@@ -1545,7 +1561,7 @@
                                                     <div style="padding: 3px 8px;">GroupingBy -&gt; FoldTo</div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_2">
-                                                    <div style="padding: 3px 8px;"><code>intLi­st.g­ro­upingBy { it }<br>.foldTo(mutableMapOf&lt;Int, Int&gt;(), 0) { accumu­lator, element -&gt; <br>&nbsp;&nbsp;        accumu­lator + element     }</code></div>
+                                                    <div style="padding: 3px 8px;"><code>intLi­st.g­ro­upingBy { it }<br>&nbsp;&nbsp;.foldTo(mutableMapOf&lt;Int, Int&gt;(), 0) {<br>&nbsp;&nbsp;&nbsp;&nbsp; accumu­lator, element -&gt; <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        accumu­lator + element <br>    }</code></div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_3">
                                                     <div style="padding: 3px 8px;"><code>{1=1, 2=2, 3=3}</code></div>
@@ -1560,7 +1576,7 @@
                                                     <div style="padding: 3px 8px;">Grouping &gt; Aggregate</div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_2">
-                                                    <div style="padding: 3px 8px;"><code>intLi­st.g­ro­upingBy { "­key­" }     <br>.aggregate({ key, accumu­lator: String?, element, isFirst -&gt; <br>         &nbsp;­&nbsp; when (accum­ulator) { <br>                 &nbsp;­&nbsp;­&nbsp;­&nbsp;     null -&gt; "­$el­eme­nt" <br>                 &nbsp;­&nbsp;­&nbsp;­&nbsp;   else -&gt; accumu­lator + "­$el­eme­nt" <br>                 &nbsp;­&nbsp; } <br>     })</code></div>
+                                                    <div style="padding: 3px 8px;"><code>intLi­st.g­ro­upingBy { "­key­" }     <br>&nbsp;&nbsp;.aggregate({ <br>&nbsp;&nbsp;&nbsp;&nbsp;key, accumu­lator: String?, <br>&nbsp;&nbsp;&nbsp;&nbsp;element, isFirst -&gt; <br>         &nbsp;­&nbsp;&nbsp;&nbsp; when (accum­ulator) { <br>                 &nbsp;­&nbsp;­&nbsp;­&nbsp; &nbsp;&nbsp;    null -&gt; "­$el­eme­nt" <br>     &nbsp;&nbsp;            &nbsp;­&nbsp;­&nbsp;­&nbsp;   else -&gt; accumu­lator + "­$el­eme­nt" <br>          &nbsp;&nbsp;       &nbsp;­&nbsp; } <br>     })</code></div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_3">
                                                     <div style="padding: 3px 8px;"><code>{key=­123}</code></div>
@@ -1797,7 +1813,7 @@
                             </style>
                             <div class="cheat_sheet_output_wrapper cheat_sheet_output_column_fourcol" style="z-index: 30; page-break-inside: avoid;"
                                 id="block_45013">
-                                <h3 class="cheat_sheet_output_title" id="title_12075_45013">Filtering and other predicates + simple HOFs</h3>
+                                <h3 class="cheat_sheet_output_title" id="title_12075_45013">Filtering and other predicates + getting individual elements</h3>
                                 <div class="cheat_sheet_output_block" id="block_12075_45013">
                                     <table border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table" class="cheat_sheet_output_fourcol">
                                         <tbody>
@@ -1861,7 +1877,7 @@
                                                     <div style="padding: 3px 8px;">Filter­Indexed</div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_2">
-                                                    <div style="padding: 3px 8px;"><code>intLi­st.f­il­ter­Indexed { idx, value -&gt; idx == 2 || value == 2 }</code></div>
+                                                    <div style="padding: 3px 8px;"><code>intLi­st.f­il­ter­Indexed { idx, value -&gt; <br>&nbsp;&nbsp;idx == 2 || value == 2 <br>}</code></div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_3" colspan="2">
                                                     <div style="padding: 3px 8px;"><code>[2,3]</code></div>
@@ -1878,7 +1894,7 @@
                                                     <div style="padding: 3px 8px;"><code>[]</code></div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_4">
-                                                    <div style="padding: 3px 8px;">All of them are ints</div>
+                                                    <div style="padding: 3px 8px;">Type parameter defines the class instance. None returned because in our list all of them are ints</div>
                                                 </td>
                                             </tr>
                                             <tr class="countrow">
@@ -1900,7 +1916,7 @@
                                                     <div style="padding: 3px 8px;"><code>[1,2]</code></div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_4">
-                                                    <div style="padding: 3px 8px;">Take n elements from Iterable. If passed in number larger than list,
+                                                    <div style="padding: 3px 8px;">Take n elements from Iterable. If passed in number larger than list,nbsp;&nbsp;
                                                         full list is returned.</div>
                                                 </td>
                                             </tr>
@@ -2089,7 +2105,7 @@
                                                     <div style="padding: 3px 8px;">GetOrElse</div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_2">
-                                                    <div style="padding: 3px 8px;">intLis­t.g­etO­rEl­se(14) { 42 }</div>
+                                                    <div style="padding: 3px 8px;"><code>intLis­t.g­etO­rEl­se(14) { 42 }</code></div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_3">
                                                     <div style="padding: 3px 8px;"><code>42</code></div>
@@ -2125,7 +2141,7 @@
                                                     <div style="padding: 3px 8px;">GetValue</div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_2">
-                                                    <div style="padding: 3px 8px;">`aMap.g­et­Val­ue(­"­hi")1</div>
+                                                    <div style="padding: 3px 8px;"><code>aMap.g­et­Val­ue(­"­hi")1</code></div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_3">
                                                     <div style="padding: 3px 8px;"><code>1</code></div>
@@ -2560,7 +2576,7 @@
                                             </tr>
                                             <tr class="altrow countrow">
                                                 <td valign="top" class="cheat_sheet_output_cell_1" colspan="4">
-                                                    <div style="padding: 3px 8px;"><code>val listOf­Fun­ctions = listOf({ print(­"­first ") }, { print(­"­second ") })</code></div>
+                                                    <div style="padding: 3px 8px;text-align: center;"><code>val listOf­Fun­ctions = listOf({ print(­"­first ") }, { print(­"­second ") })</code></div>
                                                 </td>
                                             </tr>
                                             <tr class="countrow">
@@ -2579,7 +2595,7 @@
                                                     <div style="padding: 3px 8px;">ForEac­hIn­dexed</div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_2">
-                                                    <div style="padding: 3px 8px;"><code>listO­fFu­nct­ion­s.f­orE­ach­Indexed { idx, fn -&gt; if (idx == 0) fn() else print(­"­Won't do it") } </code></div>
+                                                    <div style="padding: 3px 8px;"><code>listO­fFu­nct­ion­s.f­orE­ach­Indexed { idx, fn -&gt; <br>&nbsp;&nbsp; if (idx == 0) fn() else print(­"­Won't do it") } </code></div>
                                                 </td>
                                                 <td valign="top" class="cheat_sheet_output_cell_3" colspan="2">
                                                     <div style="padding: 3px 8px;"><code>first Won't do it</code></div>

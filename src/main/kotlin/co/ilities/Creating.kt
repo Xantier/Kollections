@@ -4,6 +4,7 @@ package co.ilities
  * Arrays
  */
 val intArray: Array<Int> = arrayOf(1, 2, 3)
+val primitiveIntArray: IntArray = intArrayOf(1, 2, 3)
 val copyOfArray: Array<Int> = intArray.copyOf()
 val partialCopyOfArray: Array<Int> = intArray.copyOfRange(0, 2)
 

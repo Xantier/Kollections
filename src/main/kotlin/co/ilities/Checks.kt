@@ -6,8 +6,10 @@ fun checks() {
     println("Any: " + intList.any()) // True, collection has elements
     println("Any with predicate: " + intList.any { it > 4 }) // False, none of them are more than 4
     println("Contains: " + intList.contains(3)) // True
+    println("Contains: " + 3 in intList) // True
     println("ContainsAll: " + intList.containsAll(listOf(2, 3, 4))) // False
     println("Map Contains: " + aMap.contains("Hello")) // False, it's "hello"
+    println("Map Contains: " + "Hello" in aMap)) // False, it's "hello"
     println("Map Contains Key: " + aMap.containsKey("Hello")) // Same as above
     println("Map Contains Value: " + aMap.containsValue(2)) // True
     println("None: " + intList.none()) // False, there are elements on the list

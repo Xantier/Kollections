@@ -2880,55 +2880,6 @@
             <div class="clear"></div>
             <div class="clear"></div>
         </div>
-
-        <div style="text-align: center">
-            <div style="display: inline-block;">
-            <h3 class="cheat_sheet_output_title">Please Rate The Cheat Sheet Below</h3>
-            <div class="feedbaas-btn" id="feedbaas_container">
-                <div>
-        <span>
-            <a href="javascript:;" onClick="rateFeedbaas(1)" id="feedbaas_btn1">>:(</a>
-        </span>
-                </div>
-                <div>
-        <span>
-            <a href="javascript:;" onClick="rateFeedbaas(2)" id="feedbaas_btn2">:(</a>
-        </span>
-                </div>
-                <div>
-        <span>
-            <a href="javascript:;" onClick="rateFeedbaas(3)" id="feedbaas_btn3">:|</a>
-        </span>
-                </div>
-                <div>
-        <span>
-            <a href="javascript:;" onClick="rateFeedbaas(4)" id="feedbaas_btn4">:)</a>
-        </span>
-                </div>
-                <div>
-        <span>
-            <a href="javascript:;" onClick="rateFeedbaas(5)" id="feedbaas_btn5">:D</a>
-        </span>
-                </div>
-            </div>
-
-            <style>
-                #feedbaas_container a.selected,#feedbaas_container div:hover a{text-shadow:0 0 50px rgba(255,255,255,.5)}#feedbaas_container{font-size:35px;text-align:center}#feedbaas_container div{display:inline-block;position:relative;float:left;width:60px;height:60px;margin:5px}#feedbaas_container a{font-family:SSSocial;text-align: center;font-style:normal;font-weight:400;text-decoration:none;text-rendering:optimizeLegibility;-moz-font-feature-settings:"liga=1";-moz-font-feature-settings:"liga";-ms-font-feature-settings:"liga" 1;-o-font-feature-settings:"liga";font-feature-settings:"liga";transition:transform 0s linear .2s,text-shadow 0s linear .2s;display:block;-webkit-font-smoothing:subpixel-antialiased;font-smoothing:antialiased}#feedbaas_container span a{display:block;position:absolute;width:100%;height:100%;background-color:#333;box-shadow:0 0 6px -2px #000,0 0 45px -20px #000;color:#fff;line-height:55px;transform:perspective(300px) rotateY(0);transition:transform .4s linear,background-color 0s linear .2s,color 0s linear .2s}#feedbaas_container div:hover span a{transform:perspective(300px) rotateY(180deg);color:#eee;transition:transform .2s linear,background-color 0s linear .1s,color 0s linear .1s}#feedbaas_container div:nth-child(1) a.selected,#feedbaas_container div:nth-child(1):hover a{background-color:#9a2204}#feedbaas_container div:nth-child(2):hover a{background-color:#a05203}#feedbaas_container div:nth-child(3):hover a{background-color:#a68503}#feedbaas_container div:nth-child(4):hover a{background-color:#8DC408}#feedbaas_container div:nth-child(5):hover a{background-color:#42C90E}#feedbaas_container div:nth-child(2) a.selected{background-color:#a05203}#feedbaas_container div:nth-child(3) a.selected{background-color:#a68503}#feedbaas_container div:nth-child(4) a.selected{background-color:#8DC408}#feedbaas_container div:nth-child(5) a.selected{background-color:#42C90E}#feedbaas_container a.not-active{pointer-events:none;cursor:default}#feedbaas_container div:hover a{transition:transform 0s linear .1s,text-shadow 0s linear .1s;transform:scale(-1,1)}@font-face{font-family:SSSocial;src:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/2361/ss-social-regular.eot);src:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/2361/ss-social-regular.eot?#iefix) format("embedded-opentype"),url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/2361/ss-social-regular.woff) format("woff"),url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/2361/ss-social-regular.ttf) format("truetype"),url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/2361/ss-social-regular.svg#SSSocialRegular) format("svg");font-weight:400;font-style:normal}html:hover [class^=feedbaas-]{-ms-zoom:1}
-            </style>
-            <script>
-              var feedbaas_options = {
-                tenant: 1, /*,
-                   buttons: {
-                   1: 'Nope! nopenopenope!',
-                   2: 'Somewhat of a clusterf*ck',
-                   3: '6/10, 8/10 With Rice',
-                   4: '13/10, good as h*ck',
-                   5: '7/5, The perfect score'
-                   }*/
-              };
-              function guid(){var e=getCookie("feedbaas");if(""!==e)return e;var t="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,function(e){var t=16*Math.random()|0;return("x"==e?t:3&t|8).toString(16)}),n=new Date;return n.setTime(n.getTime()+31536e7),document.cookie="feedbaas ="+t+"; expires="+n.toGMTString()+"; path=/",t}function getCookie(e){return document.cookie.length>0&&(c_start=document.cookie.indexOf(e+"="),-1!=c_start)?(c_start=c_start+e.length+1,c_end=document.cookie.indexOf(";",c_start),-1==c_end&&(c_end=document.cookie.length),unescape(document.cookie.substring(c_start,c_end))):""}function rateFeedbaas(e){document.getElementById("feedbaas_btn"+e).classList.add("selected");var t=new XMLHttpRequest;t.open("POST","https://www.feedbaas.com/api/rate",!0),t.setRequestHeader("Content-type","application/json"),t.onreadystatechange=function(){t.readyState==XMLHttpRequest.DONE&&200==t.status&&console.log("successfullyRated")},feedbaas_options.currentUrl=window.location.href,feedbaas_options.referrerUrl=document.referrer||"referrer",feedbaas_options.title=document.title||"Page Title",feedbaas_options.guid=guid(),feedbaas_options.timeSpent=(new Date).getTime()-FEEDBAAS_PAGE_START,feedbaas_options.value=e,feedbaas_options.geo=window.FEEDBAAS_GEO;var n=new Date;n.setTime(n.getTime()+31536e7),document.cookie="feedbaas_rating_"+document.title.replace(" ","-")+" ="+e+"; expires="+n.toGMTString()+"; path=/",t.send(JSON.stringify(feedbaas_options))}function getGeo(){var e=new XMLHttpRequest;e.onreadystatechange=function(){e.readyState==XMLHttpRequest.DONE&&200==e.status?window.FEEDBAAS_GEO=JSON.parse(e.responseText):window.FEEDBAAS_GEO={}},e.open("GET","http://freegeoip.net/json/",!0),e.send()}!function(){if(feedbaas_options&&(window.FEEDBAAS_PAGE_START=(new Date).getTime(),getGeo(),feedbaas_options.buttons))for(t=1;t<=5;t++)document.getElementById("feedbaas_btn"+t).innerHTML=feedbaas_options.buttons[t];var e=getCookie("feedbaas_rating_"+document.title.replace(" ","-"));if(e)for(var t=1;t<=5;t++)e==t&&document.getElementById("feedbaas_btn"+t).classList.add("selected"),document.getElementById("feedbaas_btn"+t).classList.add("not-active")}();
-            </script>
-            </div>
         </div>
         <div class="clear"></div>
         <div class="clear"></div>

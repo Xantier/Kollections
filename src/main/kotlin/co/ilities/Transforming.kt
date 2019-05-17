@@ -13,7 +13,7 @@ fun transformers() {
     println("MapValues: " + aMap.mapValues { pair -> pair.value + 2 }) // {hi=3, hello=4}
 
     println("Reversed: " + intList.reversed()) // [3,2,1]
-    println("Partition: " + intList.partition { it > 2 }) // Pair([1,2], [3])
+    println("Partition: " + intList.partition { it > 2 }) // Pair([3], [1,2])
     println("Slice: " + intList.slice(1..2)) // [2,3]
     println("Sorted: " + intList.sorted()) // [1,2,3]
     println("SortedByDescending: " + intList.sortedByDescending { it }) // [3,2,1]

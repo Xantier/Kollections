@@ -1,6 +1,5 @@
 package co.ilities
 
-
 fun checks() {
     println("All: " + intList.all { it < 4 }) // True, all of them are less than 4
     println("Any: " + intList.any()) // True, collection has elements
@@ -16,6 +15,4 @@ fun checks() {
     println("None with predicate: " + intList.none { it > 5 }) // True, none of them are larger than 5
     println("IsEmpty: " + intList.isEmpty()) // False
     println("IsNotEmpty: " + intList.isNotEmpty()) // True
-
-
 }

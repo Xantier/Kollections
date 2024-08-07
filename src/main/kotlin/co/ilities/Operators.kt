@@ -3,7 +3,7 @@ package co.ilities
 /**
  * Operates on all iterables
  */
-fun operate(): Unit {
+fun operate() {
     assert(listOf(1, 2, 3, 1) == intList + 1) // [1, 2, 3, 4]
     assert(listOf(2, 3) == intList - 1) // [2, 3]
 

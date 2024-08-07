@@ -1,6 +1,6 @@
 package co.ilities
 
-fun foldAndReduce(): Unit {
+fun foldAndReduce() {
     println("Folded")
     val folded = intList.fold(10) { accumulator, value ->
         println("accumulator: $accumulator, value: $value")
@@ -66,7 +66,10 @@ fun grouping() {
      * Group by first lambda, modify value with second lambda, dump the values to given mutable map
      */
     val mutableStringToListMap = mapOf("first" to 1, "second" to 2)
-    val destinationStringListMap = mutableStringToListMap.values.groupByTo(mutableMapOf<Int, MutableList<Int>>(), { value: Int -> value }, { value -> value + 10 })
+    val destinationStringListMap = mutableStringToListMap.values.groupByTo(
+        mutableMapOf<Int, MutableList<Int>>(),
+        { value: Int -> value },
+        { value -> value + 10 })
     println(destinationStringListMap) // {1=[11], 2=[12]}
 
     /**
@@ -82,33 +85,34 @@ fun grouping() {
      * Lambda receives all keys, nullable accumulator and the element plus a flag if value is the first on from this group.
      * If isFirst --> accumulator is null.
      */
-    val aggregatedString = intList.groupingBy { "key" }.aggregate({ key, accumulator: String?, element, isFirst ->
-        println("accumulator: $accumulator, value: $key, element: $element, isFirst: $isFirst")
-        when (accumulator) {
-            null -> "$element"
-            else -> accumulator + "$element"
-        }
-    })
-    println(aggregatedString) // {key=123}
-
-    /**
-     * Create a grouping by a lambda, aggregates each group to passed in element
-     * If isFirst --> accumulator is null
-     */
-    val aggregatedStringToMap = intList.groupingBy { "key" }.aggregateTo(mutableMapOf<String, String>()) { key, accumulator: String?, element, isFirst ->
+    val aggregatedString = intList.groupingBy { "key" }.aggregate { key, accumulator: String?, element, isFirst ->
         println("accumulator: $accumulator, value: $key, element: $element, isFirst: $isFirst")
         when (accumulator) {
             null -> "$element"
             else -> accumulator + "$element"
         }
     }
+    println(aggregatedString) // {key=123}
+
+    /**
+     * Create a grouping by a lambda, aggregates each group to passed in element
+     * If isFirst --> accumulator is null
+     */
+    val aggregatedStringToMap = intList.groupingBy { "key" }
+        .aggregateTo(mutableMapOf<String, String>()) { key, accumulator: String?, element, isFirst ->
+            println("accumulator: $accumulator, value: $key, element: $element, isFirst: $isFirst")
+            when (accumulator) {
+                null -> "$element"
+                else -> accumulator + "$element"
+            }
+        }
     println(aggregatedStringToMap) // {key=123}
 }
 
 fun aggregating() {
 
     val oneOrLarger = Comparator<Int> { x, y ->
-        when{
+        when {
             x == 1 -> 1
             y == 1 -> -1
             else -> y - x
@@ -129,7 +133,6 @@ fun aggregating() {
     println("MinWith: " + intList.minWith(oneOrLarger)) // 3
 
     println("Sum: " + intList.sum()) // 6
-    println("SumBy: " + intList.sumBy { if(it == 3) 6 else it }) // 1+2+6 = 9
-    println("SumByDouble: " + intList.sumByDouble { it.toDouble() }) // 6.0
-
+    println("SumBy: " + intList.sumOf { if (it == 3) 6 else it }) // 1+2+6 = 9
+    println("SumByDouble: " + intList.sumOf { it.toDouble() }) // 6.0
 }

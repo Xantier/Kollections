@@ -1,7 +1,7 @@
 package co.ilities
 
 fun transformers() {
-    println("Associate: " + intList.associate { Pair(it.toString(), it) }) // {1=1, 2=2, 3=3}
+    println("Associate: " + intList.associateBy { Pair(it.toString(), it) }) // {1=1, 2=2, 3=3}
 
     println("Map: " + intList.map { it + 1 }) // [2,3,4]
     println("MapNotNull: " + intList.mapNotNull { null }) // []

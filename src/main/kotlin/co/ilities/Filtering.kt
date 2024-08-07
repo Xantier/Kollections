@@ -43,14 +43,14 @@ fun getting() {
     println("ElementAtOrElse: " + intList.elementAtOrElse(32132) { 4 }) // 4
     println("ElementAtOrNull: " + intList.elementAtOrNull(612)) // null
 
-    println("Get Clumsy syntax: " + intList.get(2)) // 3
+    println("Get Clumsy syntax: " + intList[2]) // 3
     println("Get: " + intList[2]) // 3 -> Shorthand and preferred way for the one above
 
     println("GetOrElse: " + intList.getOrElse(632) { 5 }) // 5
     println("GetOrNull: " + intList.getOrNull(632)) // null
 
     // Map only
-    println("Get from Map (clumsy syntax): " + aMap.get("hi")) // 1
+    println("Get from Map (clumsy syntax): " + aMap["hi"]) // 1
     println("Get: " + aMap["hi"]) // 1
     println("GetValue: " + aMap.getValue("hi")) // 1
     println("GetOrDefault: " + aMap.getOrDefault("HI", 4)) // 4
